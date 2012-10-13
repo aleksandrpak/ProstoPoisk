@@ -1,0 +1,91 @@
+﻿body { font-family:Arial; }
+
+.menuTop { background-color:#DA251D; }
+
+.topLink { text-decoration:none; color:White; font-size:10pt; font-weight:bold; }
+
+.firstMenu { background-color:#0093DD; }
+
+.cell15 { width:15%; }
+
+.cell20 { width:20%; }
+
+.cell30 { width:30%; }
+
+.cell50 { width:50%; }
+
+.cell70 { width:70%; }
+
+.cell80 { width:80%; }
+
+.cell85 { width:85%; }
+
+.tdLogin { width:80%; height:170px; }
+
+.title { font-family:AvantGarde Bk BT; font-size:24pt; }
+
+.searchTB { margin: 5px 3px 3px 12px; vertical-align:middle; }
+
+.searchBTN { margin: 6px 3px 3px 12px; vertical-align:middle; text-align:left; }
+
+.searchPanel { font-size:9pt; margin: 5px 5px 5px 5px; }
+
+.btnSearch { border-style:none; border-width:0px; height:21px; } 
+
+.searchBottom { font-size:8pt; margin: 5px 3px 5px 15px; }
+
+.login { display:none; position:absolute; width:250px; }
+
+.error { font-family:Arial; font-size:12pt; font-weight:bold; }
+
+.cbRem { margin: 5px 5px 5px 10px; }
+
+.aRem { margin: 5px 5px 5px 30px; font-size:12pt; }
+
+.mrg2-15-5-20 { margin: 2px 15px 5px 20px; }
+
+.mrg5-15-5 { margin:5px 5px 15px 5px; }
+
+.mrg8-5 { margin:8px 5px 5px 5px; }
+
+.mrg15-5 { margin:15px 5px 5px 5px; }
+
+.noAdver { font-size:14pt; font-weight:bold; }
+
+.gvFnt { font-size: 8pt; font-family:Arial; }
+
+.gvHdr { font-size: 9pt; font-family:Arial; font-weight:normal; }
+
+.officeTitle { font-weight:bold; font-size:11pt; }
+
+.emailTD { width:50%; font-size:10pt; }
+
+.lbError { font-size:9pt; display:block; position:absolute; color:Red; } 
+
+.lnkBtn { font-size:9pt; font-family:Arial; color:Black; } 
+
+.LoginMain { background-color:White; border: solid 1px #E6E2D8; font-size:8pt; font-family:Arial; color:#333333; }
+
+.lgnTitle { background-color:#5D7B9D; font-weight:bold; font-size:9pt; color:White; }
+
+.lgnTitleText { font-weight:bold; font-size:12pt; color:white; background-color:#0093DD; }
+
+.lgnInstr { color:Black; font-style:italic; }
+
+.lgnBtns { border: solid 1px #CCCCCC; background-color:White; color:#284775; font-size:8pt; font-family:Arial; }
+
+.lgnBtnsBtm { border: solid 1px #CCCCCC; background-color:#0093DD; color:#FFFBFF; font-size:10pt; font-family:Arial; }
+
+.lgnTable { border-collapse:collapse; }
+
+.logout { font-size:10pt; color:#DA251D; font-family:Arial; font-weight:bold; text-decoration:none; }
+
+.messDiv { text-align:center; margin:5px 5px 5px 5px; }
+
+.messTitle { font-size:11pt; font-weight:bold; margin: 5px 5px 12px 5px; }
+
+.messPager {  }
+
+
+
+

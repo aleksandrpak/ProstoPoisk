@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\ProstoPoisk\", ".", "{357ACAE7-4E62-446C-85DC-3BFF6E8C320A}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/ProstoPoisk"
+		Debug.AspNetCompiler.PhysicalPath = "..\ProstoPoisk\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ProstoPoisk\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ProstoPoisk"
+		Release.AspNetCompiler.PhysicalPath = "..\ProstoPoisk\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ProstoPoisk\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1056"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{357ACAE7-4E62-446C-85DC-3BFF6E8C320A}.Debug|.NET.ActiveCfg = Debug|.NET
+		{357ACAE7-4E62-446C-85DC-3BFF6E8C320A}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

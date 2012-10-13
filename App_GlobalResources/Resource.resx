@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="adverEndEmpty" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+  </data>
+  <data name="adverEndSend" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2"&gt;&lt;div class="menu_bottom"&gt;&lt;a href="SendMess.aspx?login={0}" onclick="javascript:window.open('SendMess.aspx?login={0}', 'SendWindow', 'height=320,width=520'); return false;"&gt;Ответить&lt;/a&gt; | &lt;a href="ProfilePage.aspx?login={0}" onclick="javascript:window.open('ProfilePage.aspx?login={0}', 'ProfileWindow', 'height=320,width=520'); return false;"&gt;Профиль пользователя&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=Login</comment>
+  </data>
+  <data name="adverMessBegin" xml:space="preserve">
+    <value>&lt;table width="100%" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;td align="left" valign="top"&gt;&lt;table width="100%" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;td align="left" valign="top"&gt;&lt;a href="#" class="link" onmouseover="ShowMenu(this,'{0}');"&gt;{1}&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div class="menu" id="{0}" onmouseover="HoldMenu();" onmouseout="HideMenu('{0}');"&gt;&lt;table width="400px" cellspacing="0" cellpadding="0" border="0" class="table_menu"&gt;&lt;tr&gt;&lt;td align="left" valign="top" class="menu_cellNoImg"&gt;&lt;div class="menu_textNoImg"&gt;</value>
+    <comment>0=MessageID, 1=Login(Email)</comment>
+  </data>
+  <data name="adverMessCellEmpty" xml:space="preserve">
+    <value>&lt;div style="font-size:10pt;"&gt;Сообщение от &lt;b&gt;{0}&lt;/b&gt;&lt;/div&gt;&lt;br /&gt;{1}&lt;br /&gt;&lt;br /&gt;E-mail: &lt;a href="mailto:{2}"&gt;{2}&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;На Ваше объявление: &lt;b&gt;{3}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=Sender, 1=Text, 2=Email, 3=Title</comment>
+  </data>
+  <data name="adverMessCellTelephone" xml:space="preserve">
+    <value>&lt;div style="font-size:10pt;"&gt;Сообщение от &lt;b&gt;{0}&lt;/b&gt;&lt;/div&gt;&lt;br /&gt;{1}&lt;br /&gt;&lt;br /&gt;E-mail: &lt;a href="mailto:{2}"&gt;{2}&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Телефон: {3}&lt;br /&gt;&lt;br /&gt;На Ваше объявление: &lt;b&gt;{4}&lt;/b&gt;&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=Sender, 1=Text, 2=Email, 3=Tel, 4=Title</comment>
+  </data>
+  <data name="offerBegin" xml:space="preserve">
+    <value>&lt;table width="100%" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;td align="left" valign="top"&gt;&lt;table width="100%" cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;td align="left" valign="top"&gt;&lt;a href="adver.aspx?id={0}" class="link" onclick="javascript:window.open('adver.aspx?id={0}', 'OfferWindow', 'height=410,width=410'); return false;" onmouseover="ShowMenu(this,'{0}');"&gt;{1}&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div class="menu" id="{0}" onmouseover="HoldMenu();" onmouseout="HideMenu('{0}');"&gt;&lt;table width="400px" cellspacing="0" cellpadding="0" border="0" class="table_menu"&gt;</value>
+    <comment>0=ID, 1=Title</comment>
+  </data>
+  <data name="offerCellNoImg" xml:space="preserve">
+    <value>&lt;tr&gt;&lt;td align="left" valign="top" class="menu_cellNoImg"&gt;&lt;div class="menu_textNoImg"&gt;</value>
+  </data>
+  <data name="offerCellWithImg" xml:space="preserve">
+    <value>&lt;tr&gt;&lt;td align="left" valign="top" class="menu_cell"&gt;&lt;div class="menu_text"&gt;</value>
+  </data>
+  <data name="offerEmpty" xml:space="preserve">
+    <value>&lt;h4&gt;{0}&lt;/h4&gt;{1}&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=Title, 1=Text</comment>
+  </data>
+  <data name="offerEndEdit" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2"&gt;&lt;div class="menu_bottom"&gt;&lt;a href="Adver.aspx?id={0}" onclick="javascript:window.open('Adver.aspx?id={0}', 'OfferWindow', 'height=410,width=410'); return false;"&gt;Просмотреть&lt;/a&gt; | &lt;a href="Add.aspx?id={0}" onclick="javascript:window.open('Add.aspx?id={0}', 'EditWindow', 'height=625,width=608'); return false;"&gt;Редактировать&lt;/a&gt; | &lt;a id="btnDelete" onclick="return confirm('Вы действительно хотите удалить это объявление?')" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('__Page', '', true, '', 'Default.aspx?delete={0}&amp;cat={1}', false, true))"&gt;Удалить&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=ID, 1=Category</comment>
+  </data>
+  <data name="offerEndEditNoImg" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="menu_bottom"&gt;&lt;a href="Adver.aspx?id={0}" onclick="javascript:window.open('Adver.aspx?id={0}', 'OfferWindow', 'height=410,width=410'); return false;"&gt;Просмотреть&lt;/a&gt; | &lt;a href="Add.aspx?id={0}" onclick="javascript:window.open('Add.aspx?id={0}', 'SendWindow', 'height=625,width=608'); return false;"&gt;Редактировать&lt;/a&gt; | &lt;a id="btnDelete" onclick="return confirm('Вы действительно хотите удалить это объявление?')" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('__Page', '', true, '', 'Default.aspx?delete={0}&amp;cat={1}', false, true))"&gt;Удалить&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=ID, 1=Category</comment>
+  </data>
+  <data name="offerEndEmpty" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2"&gt;&lt;div class="menu_bottom"&gt;&lt;a href="Message.aspx?id={0}" onclick="javascript:window.open('Message.aspx?id={0}', 'SendWindow', 'height=423,width=508'); return false;"&gt;Отправить сообщение&lt;/a&gt; | &lt;a href="Friend.aspx?id={0}" onclick="javascript:window.open('Friend.aspx?id={0}', 'SendWindow', 'height=458,width=508'); return false;"&gt;Отправить другу&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=ID</comment>
+  </data>
+  <data name="offerEndEmptyNoImg" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="menu_bottom"&gt;&lt;a href="Message.aspx?id={0}" onclick="javascript:window.open('Message.aspx?id={0}', 'SendWindow', 'height=423,width=508'); return false;"&gt;Отправить сообщение&lt;/a&gt; | &lt;a href="Friend.aspx?id={0}" onclick="javascript:window.open('Friend.aspx?id={0}', 'SendWindow', 'height=458,width=508'); return false;"&gt;Отправить другу&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=ID</comment>
+  </data>
+  <data name="offerEndProfile" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2"&gt;&lt;div class="menu_bottom"&gt;&lt;a href="Message.aspx?id={0}" onclick="javascript:window.open('Message.aspx?id={0}', 'SendWindow', 'height=423,width=508'); return false;"&gt;Отправить сообщение&lt;/a&gt; | &lt;a href="Friend.aspx?id={0}" onclick="javascript:window.open('Friend.aspx?id={0}', 'SendWindow', 'height=458,width=508'); return false;"&gt;Отправить другу&lt;/a&gt; | &lt;a href="ProfilePage.aspx?login={1}" onclick="javascript:window.open('ProfilePage.aspx?login={1}', 'ProfileWindow', 'height=320,width=520'); return false;"&gt;Профиль пользователя&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=ID, 1=Login</comment>
+  </data>
+  <data name="offerEndProfileNoImg" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="menu_bottom"&gt;&lt;a href="Message.aspx?id={0}" onclick="javascript:window.open('Message.aspx?id={0}', 'SendWindow', 'height=423,width=508'); return false;"&gt;Отправить сообщение&lt;/a&gt; | &lt;a href="Friend.aspx?id={0}" onclick="javascript:window.open('Friend.aspx?id={0}', 'SendWindow', 'height=458,width=508'); return false;"&gt;Отправить другу&lt;/a&gt; | &lt;a href="'ProfilePage.aspx?login={1}" onclick="javascript:window.open('ProfilePage.aspx?login={1}', 'ProfileWindow', 'height=320,width=520'); return false;"&gt;Профиль пользователя&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=ID, 1=Login</comment>
+  </data>
+  <data name="offerImg" xml:space="preserve">
+    <value>&lt;td valign="top" align="right" class="menu_imgcell"&gt;&lt;div class="menu_img"&gt;&lt;img width="90px" height="68px" src="Images/adver/{0}.jpg" alt="Фото" /&gt;&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=ImgUrl</comment>
+  </data>
+  <data name="offerPrice" xml:space="preserve">
+    <value>&lt;h4&gt;{0}&lt;/h4&gt;{1}&lt;br /&gt;&lt;br /&gt;Цена: {2} {3}&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=Title, 1=Text, 2=Price, 3=Money</comment>
+  </data>
+  <data name="offerTel" xml:space="preserve">
+    <value>&lt;h4&gt;{0}&lt;/h4&gt;{1}&lt;br /&gt;&lt;br /&gt;Телефон: {2}&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=Title, 1=Text, 2=Telephone</comment>
+  </data>
+  <data name="offerTelPrice" xml:space="preserve">
+    <value>&lt;h4&gt;{0}&lt;/h4&gt;{1}&lt;br /&gt;&lt;br /&gt;Цена: {2} {4}&lt;br /&gt;&lt;br /&gt;Телефон: {3}&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=Title, 1=Text, 2=Price, 3=Telephone, 4=Money</comment>
+  </data>
+  <data name="officeEndEdit" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="2"&gt;&lt;div class="menu_bottom"&gt;&lt;a href="Adver.aspx?id={0}" onclick="javascript:window.open('Adver.aspx?id={0}', 'OfferWindow', 'height=410,width=410'); return false;"&gt;Просмотреть&lt;/a&gt; | &lt;a href="Add.aspx?id={0}" onclick="javascript:window.open('Add.aspx?id={0}', 'EditWindow', 'height=625,width=608'); return false;"&gt;Редактировать&lt;/a&gt; | &lt;a id="btnDelete" onclick="return confirm('Вы действительно хотите удалить это объявление?')" href="myAdver.aspx?delete={0}"&gt;Удалить&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=id</comment>
+  </data>
+  <data name="officeEndEditNoImg" xml:space="preserve">
+    <value>&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="menu_bottom"&gt;&lt;a href="Adver.aspx?id={0}" onclick="javascript:window.open('Adver.aspx?id={0}', 'OfferWindow', 'height=410,width=410'); return false;"&gt;Просмотреть&lt;/a&gt; | &lt;a href="Add.aspx?id={0}" onclick="javascript:window.open('Add.aspx?id={0}', 'SendWindow', 'height=625,width=608'); return false;"&gt;Редактировать&lt;/a&gt; | &lt;a id="btnDelete" onclick="return confirm('Вы действительно хотите удалить это объявление?')" href="myAdver.aspx?delete={0}"&gt;Удалить&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</value>
+    <comment>0=id</comment>
+  </data>
+  <data name="pmCellEmpty" xml:space="preserve">
+    <value>&lt;br /&gt;{0}&lt;br /&gt;&lt;br /&gt;E-mail: &lt;a href="mailto:{1}"&gt;{1}&lt;/a&gt;
+&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=Text, 1=Email</comment>
+  </data>
+  <data name="pmCellLogin" xml:space="preserve">
+    <value>&lt;div style="font-size:10pt"&gt;Сообщение от &lt;b&gt;{0}&lt;/b&gt;&lt;/div&gt;&lt;br /&gt;{1}&lt;br /&gt;&lt;br /&gt;E-mail: &lt;a href="mailto:{2}"&gt;{2}&lt;/a&gt;
+&lt;/div&gt;&lt;/td&gt;</value>
+    <comment>0=Login, 1=Text, 2=Email</comment>
+  </data>
+</root>

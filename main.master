@@ -1,0 +1,605 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="main.master.cs" Inherits="main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+<title>prostopoisk.uz</title>
+<link rel="stylesheet" href="Images/main.css" type="text/css" />
+<link href="Images/menu.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="Images/forms.css" />
+<script language="JavaScript" src="Images/menu.js" type="text/javascript"></script>
+<script language="JavaScript" src="Images/script.js" type="text/javascript"></script>
+</head>
+<body id="Body" runat="server">
+    <form id="MasterForm" runat="server">
+    <div>    
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr class="menuTop" align="center" valign="middle">
+    <td class="firstMenu">
+    <table width="198px" border="0" cellpadding="0" cellspacing="0"><tr><td>
+    <a class="topLink" href="Add.aspx" onclick="javascript:window.open('Add.aspx', 'AdverWindow', 'height=625,width=608'); return false;">Дать объявление</a>    
+    </td></tr></table>
+    </td>
+    <td class="cell15">
+    <table width="144px" border="0" cellpadding="0" cellspacing="0"><tr><td>
+    <a class="topLink" href="news.aspx">Новости</a>
+    </td></tr></table>
+    </td>
+    <td class="cell15">
+    <table width="144px" border="0" cellpadding="0" cellspacing="0"><tr><td>
+    <a class="topLink" href="#">Форум</a>
+    </td></tr></table>
+    </td>
+    <td class="cell20">
+    <table width="193px" border="0" cellpadding="0" cellspacing="0"><tr><td>
+    <asp:HyperLink ID="hlOffice" runat="server" CssClass="topLink" NavigateUrl="#">Личный кабинет</asp:HyperLink>
+    </td></tr></table>
+    </td>
+    <td class="cell15">
+    <table width="145px" border="0" cellpadding="0" cellspacing="0"><tr><td>
+    <asp:HyperLink ID="hlReg" runat="server" CssClass="topLink" NavigateUrl="#">Регистрация</asp:HyperLink >
+    </td></tr></table>
+    </td>
+    <td class="cell15">
+    <table width="145px" border="0" cellpadding="0" cellspacing="0"><tr><td>
+    <a class="topLink" href="#">Помощь</a>
+    </td></tr></table>
+    </td>    
+    </tr>
+    </table>
+    <br />
+    
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td><img src="Images/spacer.gif" width="198px" height="170px" alt="" /></td>
+    <td class="tdLogin">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr><td colspan="2">
+    <div id="login" class="login">
+    <asp:Login ID="lgnMain" runat="server" BorderPadding="4" DestinationPageUrl="~/office.aspx" CssClass="LoginMain"
+     FailureText="Вход неудался. Пожайлуста попробуйте снова." OnLoginError="lgnMain_LoginError">
+     <TitleTextStyle CssClass="lgnTitle" />
+     <InstructionTextStyle CssClass="lgnInstr" />
+     <TextBoxStyle CssClass="ftnSize9" />
+     <LoginButtonStyle CssClass="lgnBtns" />
+      <LayoutTemplate>
+       <table width="250" border="0" cellpadding="4" cellspacing="0" class="lgnTable">
+        <tr>
+         <td>
+          <table width="100%" border="0" cellpadding="0">
+           <tr>
+            <td align="center" colspan="2" class="lgnTitleText">
+             Личный кабинет
+            </td>
+           </tr>
+           <tr>
+            <td align="right">            
+             <br />             
+             <asp:Label ID="UserNameLabel" runat="server" CssClass="ftnSize12" AssociatedControlID="UserName">Логин:</asp:Label>
+            </td>
+            <td>
+             <br /><asp:TextBox ID="UserName" runat="server" CssClass="ftnSize9" Width="120px" MaxLength="250" />
+             <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+              ErrorMessage="Введите логин" ToolTip="Введите логин" ValidationGroup="Login1">
+              <span class="error">*</span></asp:RequiredFieldValidator>
+             </td>
+            </tr>
+            <tr>
+             <td align="right">
+              <asp:Label ID="PasswordLabel" runat="server" CssClass="ftnSize12" AssociatedControlID="Password">Пароль:</asp:Label>
+             </td>
+             <td>
+              <asp:TextBox ID="Password" runat="server" CssClass="ftnSize9" TextMode="Password" Width="120px"  MaxLength="120" />
+              <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+               ErrorMessage="Введите пароль" ToolTip="Введите пароль" ValidationGroup="Login1">
+               <span class="error">*</span></asp:RequiredFieldValidator>
+             </td>
+            </tr>
+            <tr>
+             <td colspan="2">
+              <div class="cbRem"><asp:CheckBox ID="RememberMe" runat="server" CssClass="ftnSize12" Text="Запомнить меня" />
+              </div>
+              <div class="aRem">
+              <a href="passrecover.aspx" onclick="javascript:window.open('passrecover.aspx', 'RecoverWindow', 'height=160,width=290'); return false;">Забыли пароль?</a>
+              </div> 
+             </td>
+            </tr>
+            <tr>
+             <td align="center" colspan="2" class="rfvs">
+              <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+             </td>
+            </tr>
+            <tr>
+             <td align="right" colspan="2">
+              <br /><asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Вход"
+                     ValidationGroup="Login1" Width="60px" CssClass="lgnBtnsBtm" />&nbsp;
+              <asp:Button ID="CancelButton" runat="server" CommandName="Login" Text="Закрыть"
+               CssClass="lgnBtnsBtm" ValidationGroup="Login1" Width="60px" />
+             </td>
+            </tr>
+           </table>
+          </td>
+         </tr>
+        </table>
+       </LayoutTemplate>
+</asp:Login>       
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td class="title" align="left" valign="bottom"> 
+    prostopoisk.uz
+    </td>
+    <td align="center" valign="bottom">    
+    <asp:LoginView ID="lvMain" runat="server">
+     <AnonymousTemplate>      
+     </AnonymousTemplate>
+     <LoggedInTemplate>     
+      <asp:Label ID="lbLoginName" CssClass="ftnSize10" Font-Bold="true" runat="server"></asp:Label>
+      <asp:LoginStatus ID="lsMain" CssClass="logout" runat="server" LogoutAction="Refresh" LogoutPageUrl="~/default.aspx" LogoutText=" (Выйти)"  />    
+     </LoggedInTemplate>
+    </asp:LoginView>    
+    </td></tr>        
+    <tr>
+    <td colspan="2">
+    <table class="menuTop" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td valign="top" class="wdth616">
+    <div class="searchTB">
+    <asp:TextBox ID="tbSearch" runat="server" CssClass="lnkBtn" Width="601px" Height="14px" />
+    <table border="0" cellpadding="0" cellspacing="0" width="601px">
+    <tr>
+    <td align="left"><div class="searchBottom">Пример: сотовый Motorola Razr V3, 230 $</div></td>
+    <td align="right">    
+    <asp:HyperLink ID="hlSearch" runat="server" CssClass="lnkBtn" NavigateUrl="#">
+    расширенный поиск
+    </asp:HyperLink>        
+    </td>
+    </tr>
+    </table>
+    </div>    
+    </td>
+    <td valign="top" align="left">
+    <div class="searchBTN">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="left">
+    <asp:ImageButton ID="btnSearch" runat="server" ImageUrl="~/Images/search.gif" OnClick="btnSearch_Click" CssClass="btnSearch" />   
+    </td></tr></table>
+    </div>
+    </td>
+    </tr>
+    <tr id="searchPanel" runat="server" style="display:none">
+    <td colspan="2">
+    <div class="mrg2-15-5-20">
+    <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td align="left">
+    <div class="searchPanel">
+    Тип:
+    <asp:DropDownList ID="ddlType" runat="server" CssClass="ftnSize8">
+    <asp:ListItem Selected="True" Value=""></asp:ListItem>
+    <asp:ListItem Value="sell">Продажа</asp:ListItem>
+    <asp:ListItem Value="buy">Покупка</asp:ListItem>
+    <asp:ListItem Value="work">Работа</asp:ListItem>
+    <asp:ListItem Value="serv">Услуги</asp:ListItem>
+    <asp:ListItem Value="rent">Аренда</asp:ListItem>
+    <asp:ListItem Value="chng">Обмен</asp:ListItem>
+    <asp:ListItem Value="rest">Прочее</asp:ListItem>
+    </asp:DropDownList>
+    </div>
+    </td>
+    <td align="left">
+    <div  class="searchPanel">
+    Регион:
+    <asp:DropDownList ID="ddlRegion" runat="server" CssClass="ftnSize8">
+    <asp:ListItem Selected="True" Value=""></asp:ListItem>    
+    </asp:DropDownList>
+    </div>
+    </td>
+    <td align="left" CssClass="ftnSize9">
+    <div  class="searchPanel">
+    Цена от 
+    <asp:TextBox ID="tbStartPrice" runat="server" Width="40px" CssClass="ftnSize8" />
+    до
+    <asp:TextBox ID="tbEndPrice" runat="server" Width="40px" CssClass="ftnSize8" />
+    <asp:DropDownList ID="ddlMoney" runat="server" CssClass="ftnSize8">
+    <asp:ListItem Selected="True" Value=""></asp:ListItem>
+    <asp:ListItem Value="у.е.">у.е.</asp:ListItem>
+    <asp:ListItem Value="Сум">Сум</asp:ListItem>
+    </asp:DropDownList>
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td align="left" colspan="3">
+    <div class="searchPanel">
+    Категория:
+    <asp:DropDownList ID="ddlCat" runat="server" CssClass="ftnSize8"
+    AppendDataBoundItems="True" DataSourceID="sdsCat" DataTextField="categoryName" DataValueField="categoryID">
+    <asp:ListItem></asp:ListItem>    
+    </asp:DropDownList>
+    </div>
+    </td>
+    </tr>
+    </table>   
+    </div>
+    </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table> 
+      
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td valign="top" align="left" class="cell20">
+    <div class="searchPanel">
+    <table width="188px" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+    <td align="left">Дата:&nbsp;</td>
+    <td align="left">
+    <asp:Label ID="lbDate" runat="server"></asp:Label>
+    </td>
+    </tr>
+    <tr>
+    <td align="left">Погода:&nbsp;</td>
+    <td align="left">
+    <asp:Label ID="lbWeather" runat="server"></asp:Label>
+    </td>
+    </tr>
+    <tr>
+    <td align="left">Доллар:&nbsp;</td>
+    <td align="left">    
+    <asp:Label ID="lbDollar" runat="server"></asp:Label>
+    </td>
+    </tr>
+    <tr>
+    <td align="left">Евро:&nbsp;</td>
+    <td align="left">
+    <asp:Label ID="lbEuro" runat="server"></asp:Label>
+    </td>
+    </tr>
+    </table>
+    </div>
+    </td>    
+    <td valign="top" align="left">
+    <table style="background-color:Silver;" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr><td valign="middle" align="center"><div style="margin: 10px 10px 10px 10px; font-size:24pt">Реклама</div></td></tr></table>
+    </td>
+    </tr>
+    </table>
+    
+    <br />
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td valign="top" align="left" class="cell20"> 
+    <table width="198px" border="0" cellpadding="0" cellspacing="0"><tr><td>
+    <asp:TreeView ID="tvNavigation" runat="server" BorderStyle="None" ImageSet="Simple" NodeIndent="10">
+        <RootNodeStyle Font-Underline="True" Font-Bold="False" Font-Names="Arial" Font-Size="9pt" />        
+        <ParentNodeStyle Font-Underline="True" Font-Bold="False" Font-Names="Arial" Font-Size="9pt" />                
+        <HoverNodeStyle Font-Underline="True" ForeColor="#DD5555" Font-Names="Arial" />
+        <SelectedNodeStyle Font-Underline="True" ForeColor="#DD5555" HorizontalPadding="0px"
+            VerticalPadding="0px" Font-Names="Arial" />
+        <NodeStyle Font-Names="Arial" Font-Size="8pt" ForeColor="Black" HorizontalPadding="0px"
+            NodeSpacing="0px" VerticalPadding="0px" Font-Underline="True" />
+        <LeafNodeStyle Font-Names="Arial" Font-Size="8pt" Font-Underline="True" />
+        <Nodes>
+            <asp:TreeNode NavigateUrl="~/Default.aspx" Text="Последние" Value="last"></asp:TreeNode>
+            <asp:TreeNode Text="Автотранспорт" Value="transport" SelectAction="Expand" Expanded="False">
+                <asp:TreeNode Text="Легковые" Value="1" NavigateUrl="~/Default.aspx?cat=1"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=2" Text="Грузовые" Value="2"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=3" Text="Автобусы и&lt;br /&gt;микроавтобусы"
+                    Value="3"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=4" Text="Мотоциклы и велосипеды" Value="4">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=5" Text="Спецтехника" Value="5"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=6" Text="Запчасти " Value="6"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Text="Недвижимость" Value="estate" Expanded="False" SelectAction="Expand">
+                <asp:TreeNode Text="Дома" Value="7" NavigateUrl="~/Default.aspx?cat=7"></asp:TreeNode>
+                <asp:TreeNode Text="1-комнатные квартиры" Value="8" NavigateUrl="~/Default.aspx?cat=8"></asp:TreeNode>
+                <asp:TreeNode Text="2-комнатные квартиры" Value="9" NavigateUrl="~/Default.aspx?cat=9"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=10" Text="3-комнатные квартиры" Value="10">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=11" Text="4-комнатные квартиры" Value="11">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=12" Text="5-комнатные квартиры" Value="12">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=13" Text="Многокомнатные квартиры"
+                    Value="13"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?ca=14" Text="Коммерческая недвижимость"
+                    Value="14"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=15" Text="Дачи" Value="15"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=16" Text="Земельные участки" Value="16">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=17" Text="Гаражи" Value="17"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=18" Text="Прочая недвижимость" Value="18">
+                </asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Text="Бытовая техника" Value="technics" Expanded="False" SelectAction="Expand">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=19" Text="Аудио-видео техника" Value="19"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=20" Text="Телевизоры" Value="20"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=21" Text="Холодильники" Value="21"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=22" Text="Фото-видео камеры" Value="22">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=23" Text="Стиральные машины" Value="23">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=24" Text="Спутниковое телевидение"
+                    Value="24"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=25" Text="Кондиционеры" Value="25"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=26" Text="Пылесосы" Value="26"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=27" Text="Швейные машины" Value="27"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=28" Text="Печи" Value="28"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=29" Text="Прочая техника" Value="29"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Компьютерная техника"
+                Value="comp">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=30" Text="Компьютеры" Value="30"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat-31" Text="Ноутбуки" Value="31"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=32" Text="Карманные ПК" Value="32"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=33" Text="Мониторы" Value="33"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=34" Text="Процессоры" Value="34"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=35" Text="Материнские платы" Value="35">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=36" Text="Оперативная память " Value="36">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=37" Text="Жёсткие диски" Value="37"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=38" Text="CD-ROM, DVD-ROM, FDD" Value="38">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=39" Text="Видеокарты" Value="39"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=40" Text="Звуковые карты" Value="40"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=41" Text="Модемы value" Value="41"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Средства связи" Value="comm">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=42" Text="Телефоны" Value="42"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=43" Text="Пейджеры" Value="43"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=44" Text="Рации" Value="44"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=45" Text="Аксессуары" Value="45"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Услуги" Value="services">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=46" Text="Интернет" Value="46"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=47" Text="Здоровье" Value="47"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=48" Text="Ремонт" Value="48"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=49" Text="Обучение" Value="49"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=50" Text="Переводы" Value="50"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=51" Text="Строительство" Value="51"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=52" Text="Транспорт" Value="52"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=53" Text="Туризм и отдых" Value="53"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=54" Text="Правовые услуги" Value="54">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=55" Text="Риэлторские услуги" Value="55">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=56" Text="Подбор персонала" Value="56">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=57" Text="Аудиторские и&lt;br /&gt;бухгалтерские услуги"
+                    Value="57"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=58" Text="Косметологические услуги"
+                    Value="58"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=59" Text="Спутниковое телевидение"
+                    Value="59"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=60" Text="Реклама" Value="60"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=61" Text="Полиграфия" Value="61"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=62" Text="Страхование" Value="62"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=63" Text="Прочее" Value="63"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Компьютерные услуги" Value="compServ">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=64" Text="Установка и настройка&lt;br /&gt;Windows и др. программ"
+                    Value="64"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=65" Text="Разработка ПО" Value="65"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=66" Text="Сборка компьютеров" Value="66">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=67" Text="Восстановление информации"
+                    Value="67"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=68" Text="Ремонт и заправка оргтехники"
+                    Value="68"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=69" Text="Ремонт и модернизация&lt;br /&gt;компьютеров"
+                    Value="69"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=70" Text="Сервисное обслуживание" Value="70">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=71" Text="Монтаж и настройка сетей"
+                    Value="71"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=72" Text="Прочее" Value="72"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Сотовые телефоны" Value="phones">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=73" Text="Alcatel" Value="73"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=74" Text="LG" Value="74"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=75" Text="Motorola" Value="75"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=76" Text="NEC" Value="76"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=77" Text="Nokia" Value="77"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=78" Text="Panasonic" Value="78"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=79" Text="Philips" Value="79"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=80" Text="Samsung" Value="80"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=81" Text="Sharp" Value="81"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=82" Text="Siemens" Value="82"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=83" Text="Sky" Value="83"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=84" Text="Sony-Ericsson" Value="84"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=85" Text="Телефоны CDMA" Value="85"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=86" Text="Аксессуары" Value="86"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=87" Text="Прочее" Value="87"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Знакомства" Value="meet">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=88" Text="Ищу мужчину" Value="88"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=89" Text="Ищу женщину" Value="89"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=90" Text="Разное" Value="90"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Мебель" Value="furniture">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=91" Text="Офисная" Value="91"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=92" Text="Для дома" Value="92"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=93" Text="Прочее" Value="93"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Разное" Value="other">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=94" Text="Деловые предложения" Value="94">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=95" Text="Оборудование и приборы"
+                    Value="95"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=96" Text="Музыкальные инструменты"
+                    Value="96"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=97" Text="Одежда и обувь" Value="97">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=98" Text="Продукты питания" Value="98">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=99" Text="Сырьё и материалы" Value="99">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=100" Text="Искусство и сувениры" Value="100">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=101" Text="Спортинвентарь" Value="101">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=102" Text="Товары для детей" Value="102">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=103" Text="Электронные деньги" Value="103">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=104" Text="Книги и журналы" Value="104">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=105" Text="Прочее" Value="105"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Оргтехника" Value="org">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=106" Text="Принтеры и плоттеры" Value="106">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=107" Text="Сканеры" Value="107"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=108" Text="Копировальная техника" Value="108">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=109" Text="Проекторы" Value="109"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=110" Text="Факсы" Value="110"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=111" Text="Расходные материалы&lt;br /&gt;и запчасти"
+                    Value="111"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=112" Text="Прочее" Value="112"></asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Работа, вакансии" Value="vac">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=113" Text="Руководители" Value="113"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=114" Text="Финансы, бухгалтерия, банк"
+                    Value="114"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=115" Text="Маркетинг, реклама" Value="115">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=116" Text="Управление персоналом" Value="116">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=117" Text="Секретариат" Value="117"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=118" Text="IT, компьютеры и Интернет"
+                    Value="118"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=119" Text="Юриспруденция" Value="119">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=120" Text="Образование, наука, культура"
+                    Value="120"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=121" Text="Телекоммуникация и связь"
+                    Value="121"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=122" Text="Архитектура и строительство"
+                    Value="122"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=123" Text="Транспорт" Value="123"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=124" Text="Издательство и полиграфия"
+                    Value="124"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=125" Text="СМИ, журналистика" Value="125">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=126" Text="Дизайн, креатив" Value="126">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=127" Text="Промышленность,&lt;br /&gt;производство"
+                    Value="127"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=128" Text="Медицина, фармацевтика"
+                    Value="128"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=129" Text="Торговля, продажи" Value="129">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=130" Text="Туризм" Value="130"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=131" Text="Гостинично-ресторанный&lt;br /&gt;бизнес"
+                    Value="131"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=132" Text="Отдых и развлечения" Value="132">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=133" Text="Охрана и безопасность" Value="133">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=134" Text="Переводы" Value="134"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=135" Text="Красота, здоровье, спорт"
+                    Value="135"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=136" Text="Работа на дому" Value="136">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=137" Text="Прочие направления" Value="137">
+                </asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Поиск работы" Value="lfj">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=138" Text="Руководители" Value="138"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=139" Text="Финансы, бухгалтерия, банк"
+                    Value="139"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=140" Text="Маркетинг, реклама" Value="140">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=141" Text="Управление персоналом" Value="141">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=142" Text="Секретариат" Value="142"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=143" Text="IT, компьютеры и Интернет"
+                    Value="143"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=144" Text="Юриспруденция" Value="144">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=145" Text="Образование, наука, культура"
+                    Value="145"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=146" Text="Телекоммуникация и связь"
+                    Value="146"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=147" Text="Архитектура и строительство"
+                    Value="147"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=148" Text="Транспорт" Value="148"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=149" Text="Издательство и полиграфия"
+                    Value="149"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=150" Text="СМИ, журналистика" Value="150">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=151" Text="Дизайн, креатив" Value="151">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=152" Text="Промышленность,&lt;br /&gt;производство"
+                    Value="152"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=153" Text="Медицина, фармацевтика"
+                    Value="153"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=154" Text="Торговля, продажи" Value="154">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=155" Text="Туризм" Value="155"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=156" Text="Гостинично-ресторанный&lt;br /&gt;бизнес"
+                    Value="156"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=157" Text="Отдых и развлечения" Value="157">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=158" Text="Охрана и безопасность" Value="158">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=159" Text="Переводы" Value="159"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=160" Text="Красота, здоровье, спорт"
+                    Value="160"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=161" Text="Работа на дому" Value="161">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=162" Text="Прочие направления" Value="162">
+                </asp:TreeNode>
+            </asp:TreeNode>
+            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Животные" Value="animals">
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=163" Text="Собаки" Value="163"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=164" Text="Кошки" Value="164"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=165" Text="Аквариумные рыбы" Value="165">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=166" Text="Декоративные птицы" Value="166">
+                </asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=167" Text="Сельскохозяйственные&lt;br /&gt;животные и птицы"
+                    Value="167"></asp:TreeNode>
+                <asp:TreeNode NavigateUrl="~/Default.aspx?cat=168" Text="Прочие животные" Value="168">
+                </asp:TreeNode>
+            </asp:TreeNode>
+        </Nodes>        
+    </asp:TreeView>        
+    </td></tr></table>      
+    </td>    
+    <td valign="top" align="left" class="cell80">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td class="cell85">    
+    <asp:contentplaceholder id="cphMain" runat="server">
+    </asp:contentplaceholder>    
+    </td>
+    <td valign="middle" align="center" style="width:15%; background-color:Silver;">
+    Реклама
+    </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    </table>
+    
+    <asp:SqlDataSource ID="sdsCat" runat="server" 
+     ConnectionString="<%$ ConnectionStrings:cnTrade %>"
+        SelectCommand="GetCategories"  
+        SelectCommandType="StoredProcedure"               
+        DataSourceMode="DataSet">                      
+        </asp:SqlDataSource>    
+    </div>          
+    </form>
+</body>
+</html>
